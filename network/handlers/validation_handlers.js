@@ -21,3 +21,7 @@ function validationHandler(shema,check){
         err ? next(boom.badData('your data is bad and you should feel bad', err)) : next()
     }
 }
+
+module.exports = {
+    validationHandler
+}
