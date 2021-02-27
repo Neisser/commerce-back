@@ -3,7 +3,7 @@ mongoose.Promise = global.Promise
 
 async function connect(uri){
     const options ={
-        useNweUrlParser:true,
+        useNewUrlParser: true,
         useCreateIndex:true,
         useUnifiedTopology:true
     }

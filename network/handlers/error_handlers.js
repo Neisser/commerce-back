@@ -47,3 +47,8 @@ function errorHandler(err, req, res, next){
         payload
     })
 }
+
+module.exports = {
+    errorHandler,
+    SentryErrors
+}
