@@ -15,7 +15,7 @@ function validate(data, schema){
  * @param {Joi} shema data required in format joi 
  * @param {type} check body or query
  */
-function validationHandler(schema,check='body'){
+function validationHandler(schema, check = 'body'){
     return function(req, res, next){
         const err = validate(req[check],schema)
         err ? next(boom.badRequest('your data is bad and you should feel bad', err)) : next()
