@@ -6,12 +6,13 @@ const { model } = require('../../lib/models/users')
 
 passport.use(new Strategy(
     {
-        secretOrKey: 'dsffsf',
+        secretOrKey: 'clave',
         jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken()
     },
     async function (tokenPayload, colllback) {
         try {
-            let dataResult = await model.findOne()
+            console.log(tokenPayload)
+            let dataResult = false
             
             !dataResult ?
                 colllback(boom.unauthorized(), false) :

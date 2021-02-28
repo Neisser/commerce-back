@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken')
-const clave ='clave super secreta'
+const clave ='clave'
 
 /**
  * This function will sign whit a token cifrated NOT ENCRYPTED 
