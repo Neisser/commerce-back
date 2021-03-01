@@ -10,6 +10,7 @@ const router = express.Router();
 router.use(routes.products)
 router.use(routes.coupons)
 router.use(routes.users)
+router.use(routes.orders)
 // router.use(routes.reports)
 // router.use(routes.roles)
 
