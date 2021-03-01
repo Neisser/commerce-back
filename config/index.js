@@ -9,6 +9,7 @@ const config = {
     DB_PASSWORD: process.env.DB_PASSWORD,
     DB_HOST: process.env.DB_HOST,
     DB_NAME: process.env.DB_NAME,
+    JWTSECRET: process.env.JWTSECRET
 };
 
 module.exports = { config }

@@ -1,22 +1,39 @@
 const passport = require('passport')
 const { ExtractJwt, Strategy } = require('passport-jwt')
 const boom = require('@hapi/boom')
-const { model } = require('../../lib/models/users')
-
+const { config } = require('../../config/index')
+const { roleUser } = require('../../lib/stores/users')
+const { roleTypes } = require('../utils/configurations')
 
 passport.use(new Strategy(
     {
-        secretOrKey: 'clave',
+        secretOrKey: config.JWTSECRET,
         jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken()
     },
     async function (tokenPayload, colllback) {
         try {
-            console.log(tokenPayload)
-            let dataResult = false
-            
-            !dataResult ?
-                colllback(boom.unauthorized(), false) :
-                colllback(null, dataResult)
+
+            const { roleId } = tokenPayload.data[0]
+            const codeRole = await roleUser(roleId[0])
+
+            switch (codeRole[0].code) {
+                case roleTypes[0]:
+                    console.log('aaa')
+                    colllback(null, tokenPayload)
+                    break;
+                case roleTypes[1]:
+                    console.log('ggg')
+                    colllback(null, tokenPayload)
+                    break;
+
+                case roleTypes[2]:
+                    console.log('bbb')
+                    colllback(null, tokenPayload)
+                    break;
+
+                default:
+                    throw boom.unauthorized()
+            }
 
         } catch (err) {
             colllback(boom.unauthorized(), false)
