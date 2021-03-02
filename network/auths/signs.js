@@ -6,7 +6,7 @@ const { config }= require('../../config/index')
  * @param {Json} data response from database
  */
 function sign(data){
-    return jwt.sign({data},config.JWTSECRET, {expiresIn:'1h'})
+    return jwt.sign({data},config.JWTSECRET, {expiresIn:'24h'})
 }
 
 module.exports = {
