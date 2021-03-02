@@ -32,6 +32,7 @@ function errorHandler(err, req, res, next){
         delete err.isBoom
         delete err.isServer
     }
+    console.log(err)
     const {
         data,
         output:{
@@ -46,4 +47,9 @@ function errorHandler(err, req, res, next){
         data,
         payload
     })
+}
+
+module.exports = {
+    errorHandler,
+    SentryErrors
 }

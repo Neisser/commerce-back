@@ -5,17 +5,22 @@ const logger = require('morgan')
 const cors = require('cors')
 const database = require('./network/utils/databases')
 const indexRouter = require('./network/utils/routes')
-const usersRouter = require('./routes/users')
-
+const helmet = require('helmet')
+const {SentryErrors, errorHandler} = require('./network/handlers/error_handlers')
+const { config } = require('./config')
 const app = express()
 //app.use(cors())
-//database(?)
+database(config.DB_SRV)
 app.use(logger('dev'))
 app.use(express.json())
+app.use(helmet())
 app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/api/v1', indexRouter)
+
+// app.use(SentryErrors)
+app.use(errorHandler)
 
 module.exports = app
