@@ -1,0 +1,899 @@
+{
+	"info": {
+		"_postman_id": "d43940cf-2679-4ad6-bbad-7bcaa585a489",
+		"name": "Commerce",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Coupons",
+			"item": [
+				{
+					"name": "add coupon",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{API_PROTOCOL}}://{{API_HOST}}:{{API_PORT}}/api/v1/coupons",
+							"protocol": "{{API_PROTOCOL}}",
+							"host": [
+								"{{API_HOST}}"
+							],
+							"port": "{{API_PORT}}",
+							"path": [
+								"api",
+								"v1",
+								"coupons"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comments",
+			"item": [
+				{
+					"name": "Create New Comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{PROVIDER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \" Nueva chaqueda roja\",\r\n    \"description\": \"chaqueta que te hará lucir mejor es la chaqueta de los mejores\",\r\n    \"stock\": 500,\r\n    \"companyId\": \"603ad5c0ee3ee2389aaf3e34\",\r\n    \"details\": {\r\n            \"colors\": [\"black\", \"pink\"],\r\n            \"sizes\": [\"S\", \"M\", \"L\"],\r\n            \"materials\": [\"cotton\"]\r\n    },\r\n    \"images\": [\"https://clusthers.s3.us-east-2.amazonaws.com/platform-files/images/product-image-1614614446816.jpg\"],\r\n    \"prices\": [\r\n        {\r\n            \"unit_price\": 65000,\r\n            \"amount\": 9,\r\n            \"description\": \"1 - 9 pieces\"\r\n        },\r\n                {\r\n            \"unit_price\": 54000,\r\n            \"amount\": 9,\r\n            \"description\": \"1 - 9 pieces\"\r\n        },\r\n                {\r\n            \"unit_price\": 39000,\r\n            \"amount\": 9,\r\n            \"description\": \"1 - 9 pieces\"\r\n        }\r\n    ],\r\n    \"target\": {\r\n            \"age\": [\"young\", \"adult\"],\r\n            \"gender\": [\"men\"]\r\n        }\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_PROTOCOL}}://{{API_HOST}}:{{API_PORT}}/api/v1/products",
+							"protocol": "{{API_PROTOCOL}}",
+							"host": [
+								"{{API_HOST}}"
+							],
+							"port": "{{API_PORT}}",
+							"path": [
+								"api",
+								"v1",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Comments by ProductsId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_PROTOCOL}}://{{API_HOST}}:{{API_PORT}}/api/v1/products/:idproduct",
+							"protocol": "{{API_PROTOCOL}}",
+							"host": [
+								"{{API_HOST}}"
+							],
+							"port": "{{API_PORT}}",
+							"path": [
+								"api",
+								"v1",
+								"products",
+								":idproduct"
+							],
+							"variable": [
+								{
+									"key": "idproduct",
+									"value": "603bd4289b8bae45f0cf9432",
+									"description": "product id (required)"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Products By Id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_PROTOCOL}}://{{API_HOST}}:{{API_PORT}}/api/v1/products/:idproduct",
+									"protocol": "{{API_PROTOCOL}}",
+									"host": [
+										"{{API_HOST}}"
+									],
+									"port": "{{API_PORT}}",
+									"path": [
+										"api",
+										"v1",
+										"products",
+										":idproduct"
+									],
+									"variable": [
+										{
+											"key": "idproduct",
+											"value": "603bd4289b8bae45f0cf9432"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "894"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"37e-ZmVdOJ7XYiY77KcnOceyaQthn6g\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 01 Mar 2021 04:07:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Error\": \"\",\n    \"Body\": [\n        {\n            \"_id\": \"603bd4289b8bae45f0cf9432\",\n            \"details\": {\n                \"colors\": [\n                    \"black\",\n                    \"pink\"\n                ],\n                \"size\": [],\n                \"material\": []\n            },\n            \"target\": {\n                \"gender\": [\n                    \"men\"\n                ],\n                \"age\": [\n                    \"young\",\n                    \"adult\"\n                ]\n            },\n            \"images\": [],\n            \"name\": \"Camisa negra de juanes\",\n            \"description\": \"chaqueta que te hará lucir mejor es la chaqueta de los mejores\",\n            \"stock\": 500,\n            \"companyId\": \"603ad5c0ee3ee2389aaf3e34\",\n            \"prices\": [\n                {\n                    \"_id\": \"603bd4289b8bae45f0cf9433\",\n                    \"unit_price\": 65000,\n                    \"amount\": 9,\n                    \"description\": \"1 - 9 pieces\"\n                },\n                {\n                    \"_id\": \"603bd4289b8bae45f0cf9434\",\n                    \"unit_price\": 54000,\n                    \"amount\": 9,\n                    \"description\": \"1 - 9 pieces\"\n                },\n                {\n                    \"_id\": \"603bd4289b8bae45f0cf9435\",\n                    \"unit_price\": 39000,\n                    \"amount\": 9,\n                    \"description\": \"1 - 9 pieces\"\n                }\n            ],\n            \"comments\": [\n                {\n                    \"userId\": \"603ba0fba82a146e001334d4\",\n                    \"comment\": \"nice product\",\n                    \"rate\": 4.1\n                },\n                {\n                    \"userId\": \"603ba0fba82a146e001334d4\",\n                    \"comment\": \"nice product1\",\n                    \"rate\": 4.2\n                },\n                {\n                    \"userId\": \"603ba0fba82a146e001334d4\",\n                    \"comment\": \"nice product2\",\n                    \"rate\": 3\n                }\n            ],\n            \"__v\": 0\n        }\n    ],\n    \"Status\": 200\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Companies",
+			"item": [
+				{
+					"name": "Get Company By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_PROTOCOL}}://{{API_HOST}}:{{API_PORT}}/api/v1/companies/:idcompany",
+							"protocol": "{{API_PROTOCOL}}",
+							"host": [
+								"{{API_HOST}}"
+							],
+							"port": "{{API_PORT}}",
+							"path": [
+								"api",
+								"v1",
+								"companies",
+								":idcompany"
+							],
+							"variable": [
+								{
+									"key": "idcompany",
+									"value": "603ad5c0ee3ee2389aaf3e34"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Landing",
+			"item": [
+				{
+					"name": "Get Last Companies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_PROTOCOL}}://{{API_HOST}}:{{API_PORT}}/api/v1/home/last-companies?limit=5&skip=0",
+							"protocol": "{{API_PROTOCOL}}",
+							"host": [
+								"{{API_HOST}}"
+							],
+							"port": "{{API_PORT}}",
+							"path": [
+								"api",
+								"v1",
+								"home",
+								"last-companies"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "5"
+								},
+								{
+									"key": "skip",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "add order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"details\":[\r\n        {\r\n        \"productId\":\"603af11c4a688b297874cb6b\",\r\n        \"detailsProduct\":[{\r\n            \"quantity\":300,\r\n             \"unit_price\":130,\r\n             \"color\":\"Rojo\",\r\n             \"size\":\"L\",\r\n             \"material\":\"poliester\",\r\n             \"gender\":\"M\",\r\n             \"age\":\"Young\"\r\n        },\r\n        {\r\n            \"quantity\":500,\r\n             \"unit_price\":110,\r\n             \"color\":\"azul\",\r\n             \"size\":\"XXL\",\r\n             \"material\":\"algodon\",\r\n             \"gender\":\"F\",\r\n             \"age\":\"Young\"\r\n        }\r\n    ],\r\n    \"delivery_instruction\":\"serca de mi casa\",\r\n    \"code\":\"smefemifs8\",\r\n    \"userId\":\"603c5a21978d3d3d008826df\",\r\n    \"companyId\":\"603ad5c0ee3ee2389aaf3e34\",\r\n    \"couponsId\":\"603c7dbc0e76c2066c33d064\",\r\n    \"total\":\"46338\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_PROTOCOL}}://{{API_HOST}}/api/v1/orders",
+							"protocol": "{{API_PROTOCOL}}",
+							"host": [
+								"{{API_HOST}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list orders from user buy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list order from company sell",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_PROTOCOL}}://{{API_HOST}}:{{API_PORT}}/api/v1/orders/company?companyId=603ad5c0ee3ee2389aaf3e34",
+							"protocol": "{{API_PROTOCOL}}",
+							"host": [
+								"{{API_HOST}}"
+							],
+							"port": "{{API_PORT}}",
+							"path": [
+								"api",
+								"v1",
+								"orders",
+								"company"
+							],
+							"query": [
+								{
+									"key": "companyId",
+									"value": "603ad5c0ee3ee2389aaf3e34"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Get Products By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_PROTOCOL}}://{{API_HOST}}:{{API_PORT}}/api/v1//products/:idproduct/comments",
+							"protocol": "{{API_PROTOCOL}}",
+							"host": [
+								"{{API_HOST}}"
+							],
+							"port": "{{API_PORT}}",
+							"path": [
+								"api",
+								"v1",
+								"",
+								"products",
+								":idproduct",
+								"comments"
+							],
+							"variable": [
+								{
+									"key": "idproduct",
+									"value": "603bd4289b8bae45f0cf9432",
+									"description": "product id (required)"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Products By Id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_PROTOCOL}}://{{API_HOST}}:{{API_PORT}}/api/v1/products/:idproduct",
+									"protocol": "{{API_PROTOCOL}}",
+									"host": [
+										"{{API_HOST}}"
+									],
+									"port": "{{API_PORT}}",
+									"path": [
+										"api",
+										"v1",
+										"products",
+										":idproduct"
+									],
+									"variable": [
+										{
+											"key": "idproduct",
+											"value": "603bd4289b8bae45f0cf9432"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "894"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"37e-ZmVdOJ7XYiY77KcnOceyaQthn6g\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 01 Mar 2021 04:07:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Error\": \"\",\n    \"Body\": [\n        {\n            \"_id\": \"603bd4289b8bae45f0cf9432\",\n            \"details\": {\n                \"colors\": [\n                    \"black\",\n                    \"pink\"\n                ],\n                \"size\": [],\n                \"material\": []\n            },\n            \"target\": {\n                \"gender\": [\n                    \"men\"\n                ],\n                \"age\": [\n                    \"young\",\n                    \"adult\"\n                ]\n            },\n            \"images\": [],\n            \"name\": \"Camisa negra de juanes\",\n            \"description\": \"chaqueta que te hará lucir mejor es la chaqueta de los mejores\",\n            \"stock\": 500,\n            \"companyId\": \"603ad5c0ee3ee2389aaf3e34\",\n            \"prices\": [\n                {\n                    \"_id\": \"603bd4289b8bae45f0cf9433\",\n                    \"unit_price\": 65000,\n                    \"amount\": 9,\n                    \"description\": \"1 - 9 pieces\"\n                },\n                {\n                    \"_id\": \"603bd4289b8bae45f0cf9434\",\n                    \"unit_price\": 54000,\n                    \"amount\": 9,\n                    \"description\": \"1 - 9 pieces\"\n                },\n                {\n                    \"_id\": \"603bd4289b8bae45f0cf9435\",\n                    \"unit_price\": 39000,\n                    \"amount\": 9,\n                    \"description\": \"1 - 9 pieces\"\n                }\n            ],\n            \"comments\": [\n                {\n                    \"userId\": \"603ba0fba82a146e001334d4\",\n                    \"comment\": \"nice product\",\n                    \"rate\": 4.1\n                },\n                {\n                    \"userId\": \"603ba0fba82a146e001334d4\",\n                    \"comment\": \"nice product1\",\n                    \"rate\": 4.2\n                },\n                {\n                    \"userId\": \"603ba0fba82a146e001334d4\",\n                    \"comment\": \"nice product2\",\n                    \"rate\": 3\n                }\n            ],\n            \"__v\": 0\n        }\n    ],\n    \"Status\": 200\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Products By CompanyId",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"colors\": [\"black\", \"pink\"],\r\n    \"sizes\": [\"m\"],\r\n    \"materials\": [\"Silk\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_PROTOCOL}}://{{API_HOST}}:{{API_PORT}}/api/v1/company/:idcompany/products?limit=10&skip=0",
+							"protocol": "{{API_PROTOCOL}}",
+							"host": [
+								"{{API_HOST}}"
+							],
+							"port": "{{API_PORT}}",
+							"path": [
+								"api",
+								"v1",
+								"company",
+								":idcompany",
+								"products"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10",
+									"description": "default: 10, required"
+								},
+								{
+									"key": "skip",
+									"value": "0",
+									"description": "default: 0, required"
+								}
+							],
+							"variable": [
+								{
+									"key": "idcompany",
+									"value": "603ad5c0ee3ee2389aaf3e34",
+									"description": "company id"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_PROTOCOL}}://{{API_HOST}}:{{API_PORT}}/api/v1/products/featured-products?limit=5&skip=0",
+							"protocol": "{{API_PROTOCOL}}",
+							"host": [
+								"{{API_HOST}}"
+							],
+							"port": "{{API_PORT}}",
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"featured-products"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "5"
+								},
+								{
+									"key": "skip",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Featured Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_PROTOCOL}}://{{API_HOST}}:{{API_PORT}}/api/v1/home/products/search?search=camisa&limit=5&skip=0",
+							"protocol": "{{API_PROTOCOL}}",
+							"host": [
+								"{{API_HOST}}"
+							],
+							"port": "{{API_PORT}}",
+							"path": [
+								"api",
+								"v1",
+								"home",
+								"products",
+								"search"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "camisa"
+								},
+								{
+									"key": "limit",
+									"value": "5"
+								},
+								{
+									"key": "skip",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create New Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{PROVIDER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"603ba0fba82a146e001334d4\",\r\n    \"comment\": \"hola que buen producto2\",\r\n    \"rate\": 4.5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_PROTOCOL}}://{{API_HOST}}:{{API_PORT}}/api/v1/products",
+							"protocol": "{{API_PROTOCOL}}",
+							"host": [
+								"{{API_HOST}}"
+							],
+							"port": "{{API_PORT}}",
+							"path": [
+								"api",
+								"v1",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{PROVIDER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Chaqueta bomber extreme\",\r\n    \"description\": \"chaqueta que te hará lucir mejor es la chaqueta de los mejores\",\r\n    \"stock\": 500,\r\n    \"companyId\": \"603ad5c0ee3ee2389aaf3e34\",\r\n    \"details\": {\r\n            \"colors\": [\"black\", \"pink\"],\r\n            \"sizes\": [\"S\", \"M\", \"L\"],\r\n            \"materials\": [\"cotton\"]\r\n    },\r\n    \"prices\": [\r\n        {\r\n            \"unit_price\": 65000,\r\n            \"amount\": 9,\r\n            \"description\": \"1 - 9 pieces\"\r\n        },\r\n                {\r\n            \"unit_price\": 54000,\r\n            \"amount\": 9,\r\n            \"description\": \"1 - 9 pieces\"\r\n        },\r\n                {\r\n            \"unit_price\": 39000,\r\n            \"amount\": 9,\r\n            \"description\": \"1 - 9 pieces\"\r\n        }\r\n    ],\r\n    \"target\": {\r\n            \"age\": [\"young\", \"adult\"],\r\n            \"gender\": [\"men\"]\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_PROTOCOL}}://{{API_HOST}}:{{API_PORT}}/api/v1/products/:idproduct",
+							"protocol": "{{API_PROTOCOL}}",
+							"host": [
+								"{{API_HOST}}"
+							],
+							"port": "{{API_PORT}}",
+							"path": [
+								"api",
+								"v1",
+								"products",
+								":idproduct"
+							],
+							"variable": [
+								{
+									"key": "idproduct",
+									"value": "603b18d4852f583ec0a9773e"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Products By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{PROVIDER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{API_PROTOCOL}}://{{API_HOST}}:{{API_PORT}}/api/v1/products/:idproduct",
+							"protocol": "{{API_PROTOCOL}}",
+							"host": [
+								"{{API_HOST}}"
+							],
+							"port": "{{API_PORT}}",
+							"path": [
+								"api",
+								"v1",
+								"products",
+								":idproduct"
+							],
+							"variable": [
+								{
+									"key": "idproduct",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Uploader",
+			"item": [
+				{
+					"name": "Upload File",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/villa/Downloads/product-image-1614614449336.jpg"
+								},
+								{
+									"key": "type",
+									"value": "product",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{API_PROTOCOL}}://{{API_HOST}}:{{API_PORT}}/api/v1/uploader/images",
+							"protocol": "{{API_PROTOCOL}}",
+							"host": [
+								"{{API_HOST}}"
+							],
+							"port": "{{API_PORT}}",
+							"path": [
+								"api",
+								"v1",
+								"uploader",
+								"images"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Registrer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjpbeyJfaWQiOiI2MDNiYTBmYmE4MmExNDZlMDAxMzM0ZDQiLCJuYW1lIjoiJ1JvYmluc29uIEFndWlsYXIiLCJlbWFpbCI6Inplcm9kYXRAZ21haWwuY29tIiwiX2lkX3JvbGUiOlsiNjAzYTg4MzZlZTNlZTIzODlhOGU3MDZlIl0sInJvbGUiOlsyXSwiX2lkX2NvbXBhbnkiOltdLCJjb21wYW55IjpbXX1dLCJpYXQiOjE2MTQ1Mjk5NDYsImV4cCI6MTYxNDUzMzU0Nn0._Oc9I3m5EJmE0nx3qhOPk0vzhOGgPxbGaZTkkcZadxA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"zerodat@gmail.com\",\r\n    \"first_name\":\"'Robinson\",\r\n    \"last_name\": \"Aguilar\",\r\n    \"password\":\"moraditoazul12\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_PROTOCOL}}://{{API_HOST}}:{{API_PORT}}/api/v1/users",
+							"protocol": "{{API_PROTOCOL}}",
+							"host": [
+								"{{API_HOST}}"
+							],
+							"port": "{{API_PORT}}",
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"zerodata.gmail.com\",\r\n    \"password\":\"moraditoazul123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_PROTOCOL}}://{{API_HOST}}:{{API_PORT}}/api/v1/login",
+							"protocol": "{{API_PROTOCOL}}",
+							"host": [
+								"{{API_HOST}}"
+							],
+							"port": "{{API_PORT}}",
+							"path": [
+								"api",
+								"v1",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Information",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update user",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"first_name\":\"Robin\",\r\n    \"last_name\":\"Aguila\",\r\n    \"_id\":\"603c5a21978d3d3d008826df\",\r\n    \"phone\":\"+56954523303\",\r\n    \"address\": [{\r\n        \"name\": \"monsito\",\r\n        \"address\":\"monseñor manuel\",\r\n        \"optional\": \"\",\r\n        \"country\":\"Chile\",\r\n        \"province\":\"Metropolitana\",\r\n        \"city\":\"Santiago\",\r\n        \"location\":\"Pirque\",\r\n        \"neighborhood\":\"ddd\",\r\n        \"postal_code\":5463565,\r\n        \"contact\":\"83232823\"\r\n\r\n\r\n    }]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_PROTOCOL}}://{{API_HOST}}:{{API_PORT}}/api/v1/users",
+							"protocol": "{{API_PROTOCOL}}",
+							"host": [
+								"{{API_HOST}}"
+							],
+							"port": "{{API_PORT}}",
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "server test",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_PROTOCOL}}://{{API_HOST}}",
+					"protocol": "{{API_PROTOCOL}}",
+					"host": [
+						"{{API_HOST}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
