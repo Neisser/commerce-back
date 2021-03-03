@@ -65,7 +65,7 @@ const OrderStage4 = (
                             <td align="center" valign="top">
                                <div style="height: 20px; line-height: 20px; font-size: 38px;">&nbsp;</div>
                                <a href="#" target="_blank" style="display: block; max-width: 128px;">
-                                  <img src="https://inferno-email-image.s3.us-east-2.amazonaws.com/red-logo300.png" alt="img" width="128" border="0" style="display: block; width: 128px;" />
+                                 IMAGEN BORRADA
                                </a>
                                <div class="top_pad2" style="height: 30px; line-height: 30px; font-size: 38px;">&nbsp;</div>
                             </td>
