@@ -1,12 +1,11 @@
-
-const OrderGenerated = (
+const verifyUser = (
     username,
     url
   ) => `<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
     <html>
     <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
-    <title>Orders Generated</title>
+    <title>Email Verification</title>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
     <style type="text/css">
     html { -webkit-text-size-adjust: none; -ms-text-size-adjust: none;}
@@ -76,7 +75,7 @@ const OrderGenerated = (
                          <tr>
                             <td align="center" valign="top">
                                <font class="mob_title1" face="'Source Sans Pro', sans-serif" color="#1a1a1a" style="font-size: 30px; line-height: 45px; font-weight: 300; letter-spacing: -1px;">
-                                  <span class="mob_title1" style="font-family: 'Source Sans Pro', Arial, Tahoma, Geneva, sans-serif; color:#000; font-size: 30px; line-height: 45px; font-weight: 300; letter-spacing: -1px;">Hello  ${name} <br/> <br/>Your order was generated:</span>
+                                  <span class="mob_title1" style="font-family: 'Source Sans Pro', Arial, Tahoma, Geneva, sans-serif; color:#000; font-size: 30px; line-height: 45px; font-weight: 300; letter-spacing: -1px;">Hello  ${username} <br/> <br/>Please verify your Clusthers account by clicking the link below:</span>
                                </font>
                                <div class="top_pad3" style="height: 30px; line-height: 30px; font-size: 28px;">&nbsp;</div>
                             </td>
@@ -88,7 +87,7 @@ const OrderGenerated = (
                             <td class="mob_left" align="center" valign="top">
                              
                                
-                               <table class="mob_btn" cellpadding="0" cellspacing="0" border="0" style="background: #120A54; border-radius: 4px;">
+                               <table class="mob_btn" cellpadding="0" cellspacing="0" border="0" style="background: #ee4037; border-radius: 4px;">
                                   <tr>
                                      <td align="center" valign="top"> 
                                         <a href="${url}" target="_blank" style="display: block; border-radius: 4px; padding: 10px 55px; font-family: 'Source Sans Pro', Arial, Verdana, Tahoma, Geneva, sans-serif; color: #ffffff; font-size: 20px; line-height: 30px; text-decoration: none; white-space: nowrap; font-weight: 600;">
@@ -128,11 +127,11 @@ const OrderGenerated = (
                                       
                                         <div style="height: 34px; line-height: 34px; font-size: 32px;">&nbsp;</div>
                                         <font face="'Source Sans Pro', sans-serif" color="#868686" style="font-size: 13px; line-height: 16px;">
-                                           <span style="font-family: 'Source Sans Pro', Arial, Tahoma, Geneva, sans-serif; color: #868686; font-size: 13px; line-height: 16px;">Copyright &copy; 2021 Clusthers. All&nbsp;Rights&nbsp;Reserved. </span>
+                                           <span style="font-family: 'Source Sans Pro', Arial, Tahoma, Geneva, sans-serif; color: #868686; font-size: 13px; line-height: 16px;">Copyright &copy; 2020 Clusthers. All&nbsp;Rights&nbsp;Reserved. </span>
                                         </font>
                                         <div style="height: 3px; line-height: 3px; font-size: 1px;">&nbsp;</div>
                                         <font face="'Source Sans Pro', sans-serif" color="#1a1a1a" style="font-size: 13px; line-height: 16px;">
-                                           <span style="font-family: 'Source Sans Pro', Arial, Tahoma, Geneva, sans-serif; color: #1a1a1a; font-size: 13px; line-height: 16px;"><a href="#" target="_blank" style="font-family: 'Source Sans Pro', Arial, Tahoma, Geneva, sans-serif; color: #120A54; font-size: 15px; line-height: 18px; text-decoration: none;">hola@clusthers.com</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="#" target="_blank" style="font-family: 'Source Sans Pro', Arial, Tahoma, Geneva, sans-serif; color: #120A54; font-size: 15px; line-height: 18px; text-decoration: none;">clusther.com</a></span>
+                                           <span style="font-family: 'Source Sans Pro', Arial, Tahoma, Geneva, sans-serif; color: #1a1a1a; font-size: 13px; line-height: 16px;"><a href="#" target="_blank" style="font-family: 'Source Sans Pro', Arial, Tahoma, Geneva, sans-serif; color: #ee4037; font-size: 15px; line-height: 18px; text-decoration: none;">hola@clusthers.com</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="#" target="_blank" style="font-family: 'Source Sans Pro', Arial, Tahoma, Geneva, sans-serif; color: #ee4037; font-size: 15px; line-height: 18px; text-decoration: none;"clusthers.com</a></span>
                                         </font>
                                         <div style="height: 35px; line-height: 35px; font-size: 33px;">&nbsp;</div>
                                        
@@ -156,4 +155,4 @@ const OrderGenerated = (
     </body>
     </html>`;
   
-  module.exports = OrderGenerated;
+  module.exports = verifyUser;

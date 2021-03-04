@@ -4,4 +4,3 @@ const OrderStage3 = (
     url
   ) => ``;
   
-  module.exports = OrderStage3;
