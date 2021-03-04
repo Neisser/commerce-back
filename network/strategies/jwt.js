@@ -10,25 +10,20 @@ passport.use(new Strategy(
         secretOrKey: config.JWTSECRET,
         jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken()
     },
-    async function (tokenPayload, colllback) {
+    async function (tokenPayload, callback) {
         try {
-
             const { roleId } = tokenPayload.data[0]
             const codeRole = await roleUser(roleId[0])
-
             switch (codeRole[0].code) {
                 case roleTypes[0]:
-                    console.log('aaa')
-                    colllback(null, tokenPayload)
+                    callback(null, tokenPayload)
                     break;
                 case roleTypes[1]:
-                    console.log('ggg')
-                    colllback(null, tokenPayload)
+                    callback(null, tokenPayload)
                     break;
 
                 case roleTypes[2]:
-                    console.log('bbb')
-                    colllback(null, tokenPayload)
+                    callback(null, tokenPayload)
                     break;
 
                 default:
@@ -36,7 +31,7 @@ passport.use(new Strategy(
             }
 
         } catch (err) {
-            colllback(boom.unauthorized(), false)
+            callback(boom.unauthorized(), false)
         }
     }
 ))

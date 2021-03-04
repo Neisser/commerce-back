@@ -1,4 +1,4 @@
-const roleTypes = [1, 2, 3]
+const roleTypes = [0, 1, 2]
 
 module.exports = {
     roleTypes
