@@ -21,7 +21,7 @@ const checkAuthToken = (token) =>
         const tokenPayload = await checkAuthToken(token.slice(7))
         const { roleId } = tokenPayload.data[0]
         const codeRole = await roleUser(roleId[0])
-        if([roleTypes[0]].include(codeRole[0].code)){
+        if(![roleTypes[0]].includes(codeRole[0].code)){
           throw boom.unauthorized("Only admin are authorized")
         }
         next()
@@ -40,7 +40,7 @@ const authProvider = async (req, res, next) => {
       const tokenPayload = await checkAuthToken(token.slice(7))
       const { roleId } = tokenPayload.data[0]
       const codeRole = await roleUser(roleId[0])
-      if([roleTypes[0], roleTypes[1]].include(codeRole[0].code)){
+      if(![roleTypes[0], roleTypes[1]].includes(codeRole[0].code)){
         throw boom.unauthorized("Only providers are authorized")
       }
       next()
@@ -59,7 +59,8 @@ const authClient = async (req, res, next) => {
       const tokenPayload = await checkAuthToken(token.slice(7))
       const { roleId } = tokenPayload.data[0]
       const codeRole = await roleUser(roleId[0])
-      if([roleTypes[0], roleTypes[1], roleTypes[2]].include(codeRole[0].code)){
+
+      if( ![ roleTypes[0], roleTypes[1], roleTypes[2] ].includes(codeRole[0].code) ){
         throw boom.unauthorized("Only clients are authorized")
       }
       next()
