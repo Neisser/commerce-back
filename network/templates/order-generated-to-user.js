@@ -1,5 +1,5 @@
 
-const OrderGenerated = (
+const OrderGeneratedToUser = (
    username,
    url,
    data,
@@ -149,7 +149,7 @@ const OrderGenerated = (
               ${value}
              </tr> 
              <tr style="border-collapse:collapse"> 
-              <td align="left" style="padding:0;Margin:0;padding-top:20px"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Arial, sans-serif;line-height:21px;color:#333333;font-size:14px"><span style="font-size:15px"><strong style="line-height:150%">Item Price:</strong> $300</span></p><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Arial, sans-serif;line-height:21px;color:#333333;font-size:14px"><span style="font-size:15px"><strong>Qty: </strong>2</span></p></td> 
+              <td align="left" style="padding:0;Margin:0;padding-top:20px"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Arial, sans-serif;line-height:21px;color:#333333;font-size:14px"><span style="font-size:15px"><strong style="line-height:150%"></strong></span></p><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Arial, sans-serif;line-height:21px;color:#333333;font-size:14px"><span style="font-size:15px"><strong></strong></span></p></td> 
              </tr> 
            </table></td> 
          </tr> 
@@ -174,7 +174,7 @@ const OrderGenerated = (
                          <td align="center" style="padding:0;Margin:0;padding-bottom:15px"> 
                           <table class="cke_show_border" height="101" cellspacing="1" cellpadding="1" border="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;width:240px">                        
                             <tr style="border-collapse:collapse"> 
-                             <td style="padding:0;Margin:0"><strong>Se recuerda que todos los impuestos y comisiones asociados a la compra. estan incluido en el precio unitario dado por la empresa en su producto</strong></td> 
+                             <td style="padding:0;Margin:0"><strong>Se sugiere guardar este email para futuras consultas, dudas o problemas que puedan surgir</strong></td> 
                             </tr> 
                             <tr style="border-collapse:collapse"> 
                              <td style="padding:0;Margin:0"><span style="font-size:18px;line-height:26px"><strong>Order Total:</strong></span></td> 
@@ -238,4 +238,4 @@ const OrderGenerated = (
    </html>`
 }
 
-module.exports = OrderGenerated;
+module.exports = OrderGeneratedToUser;
