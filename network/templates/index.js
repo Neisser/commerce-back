@@ -4,6 +4,7 @@ const OrderStage2  = require('./order-stage2')
 const OrderStage3  = require('./order-stage3')
 const OrderStage4  = require('./order-stage4')
 const RegisterCompleted  = require('./register-completed')
+const OrderGeneratedToUser = require('./order-generated-to-user')
 const verifyUser  = require('./verify-user')
 
 module.exports = {
@@ -13,5 +14,6 @@ module.exports = {
     OrderStage3,
     OrderStage4,
     RegisterCompleted,
-    verifyUser
+    verifyUser,
+    OrderGeneratedToUser
 }

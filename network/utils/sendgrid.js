@@ -4,7 +4,7 @@ const boom = require('@hapi/boom')
 Sendgrid.setApiKey(config.SENDGRID_API_KEY);
 
 const sendgridMail = async ({to , subject , template}) => {
-    console.log({to,subject,template})
+   
     await Sendgrid.send({
         to:to,
         from: config.EMAIL_SENDER,
